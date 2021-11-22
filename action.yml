@@ -1,11 +1,19 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'AnnotateRunApi'
+description: 'This is a thin layer to route messages to the overview of a github action run'
+author: 'mholetzko'
 inputs:
-  milliseconds: # change this
-    required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+  warn: # change this
+    required: false
+    description: 'This message - if set - will be printed as warning to the action(s) summary'
+    default: 'Warning from action'
+  info: # change this
+    required: false
+    description: 'This message - if set - will be printed as info to the action(s) summary'
+    default: 'Info from action'
+  error: # change this
+    required: false
+    description: 'This message - if set - will be printed as error to the action(s) summary'
+    default: 'Error from action'
 runs:
   using: 'node12'
   main: 'dist/index.js'

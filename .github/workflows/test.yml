@@ -21,4 +21,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ./
         with:
-          milliseconds: 1000
+          info: "This is an info!"
+          warning: "This is a warning! "
+          error: "This is an error! "

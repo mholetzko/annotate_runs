@@ -1,11 +1,12 @@
 import * as core from '@actions/core'
+import * as fmt from './format'
 
 async function run(): Promise<void> {
   try {
-    core.error('This is a bad error. This will also fail the build.')
-    core.warning('Something went wrong, but it\'s not bad enough to fail the build.')
-    core.notice('Something happened that you might want to know about.')
-    core.notice(core.getInput('milliseconds'))
+    fmt.formatErrors(core.getInput('error'));
+    fmt.formatWarning(core.getInput('warning'));
+    fmt.formatInfos(core.getInput('info'));
+
   } catch (error) {
     if (error instanceof Error) core.setFailed(error.message)
   }
