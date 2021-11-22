@@ -8,7 +8,7 @@ This github action provides a very simple interface to add an annotation to a gi
 
 ## Inputs
 
-All inputs are optional!
+All inputs are optional - if you don't add any, then the action will just do nothing!
 
 You can add info, warn and error - the inputs are simple strings which will be routed
 to the github action output.
@@ -31,5 +31,5 @@ with:
   error: 'This is an error'
 ```
 
-Doing so, you will the following output of your run. Keep in mind, that the heading is equal to your step name.
+Doing so, you will get the following output of your run. Keep in mind, that the heading of each annotation is equal to your step name.
 ![example step output](./assets/action_output.png)
