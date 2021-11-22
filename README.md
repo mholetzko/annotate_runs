@@ -31,5 +31,5 @@ with:
   error: 'This is an error'
 ```
 
-Doing so, you will get the following output of your run. Keep in mind, that the heading of each annotation is equal to your step name.
+Doing so, you will get the following output of your run. Keep in mind, that the heading of each annotation is equal to your pipeline step name.
 ![example step output](./assets/action_output.png)
