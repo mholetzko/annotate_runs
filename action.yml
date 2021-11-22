@@ -2,6 +2,9 @@ name: 'AnnotateRunApi'
 description: 'This is a thin layer to route messages to the overview of a github action run'
 author: 'mholetzko'
 inputs:
+  title:
+    required: false
+    description: 'This is the title which you want to set to your annotation - default is the pipeline step name'
   warning: # change this
     required: false
     description: 'This message - if set - will be printed as warning to the action(s) summary'

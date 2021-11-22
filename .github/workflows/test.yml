@@ -21,6 +21,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ./
         with:
-          info: "This is an info!"
-          warning: "This is a warning! "
-          error: "This is an error! "
+          info: 'This is an info!'
+          warning: 'This is a warning! '
+          error: 'This is an error! '
+          title: 'Example Annotation Title'

@@ -25,6 +25,7 @@ describe('environmental variables', () => {
     expect(log).toContain('::error')
     expect(log).toContain('::info')
     expect(log).toContain('::warning')
+    expect(log).not.toContain('title=')
   })
 
   test('test runs with no inputs', () => {
@@ -38,6 +39,7 @@ describe('environmental variables', () => {
     expect(log).toContain('no warn set')
     expect(log).toContain('no info set')
     expect(log).toContain('no error set')
+    expect(log).not.toContain('title=')
   })
 
   test('test runs with some input', () => {
@@ -51,5 +53,21 @@ describe('environmental variables', () => {
     expect(log).toContain('no error set')
     expect(log).toContain('no info set')
     expect(log).toContain('::warning')
+    expect(log).not.toContain('title=')
+  })
+  test('test runs with a title', () => {
+    process.env['INPUT_WARNING'] = 'warning'
+    process.env['INPUT_TITLE'] = 'title123'
+    const np = process.execPath
+    const ip = path.join(__dirname, '..', 'lib', 'main.js')
+    const options: cp.ExecFileSyncOptions = {
+      env: process.env
+    }
+    const log = cp.execFileSync(np, [ip], options).toString()
+    console.log(log)
+    expect(log).toContain('no error set')
+    expect(log).toContain('no info set')
+    expect(log).toContain('::warning')
+    expect(log).toContain('title=title123')
   })
 })

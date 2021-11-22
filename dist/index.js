@@ -28,27 +28,42 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.formatErrors = exports.formatWarning = exports.formatInfos = void 0;
 const core = __importStar(__nccwpck_require__(186));
-function formatInfos(info) {
+function formatInfos(info, title) {
     if (info) {
-        core.notice(info);
+        if (title) {
+            core.notice(info, { title });
+        }
+        else {
+            core.notice(info);
+        }
     }
     else {
         core.info('no info set');
     }
 }
 exports.formatInfos = formatInfos;
-function formatWarning(warn) {
+function formatWarning(warn, title) {
     if (warn) {
-        core.warning(warn);
+        if (title) {
+            core.warning(warn, { title });
+        }
+        else {
+            core.warning(warn);
+        }
     }
     else {
         core.info('no warn set');
     }
 }
 exports.formatWarning = formatWarning;
-function formatErrors(error) {
+function formatErrors(error, title) {
     if (error) {
-        core.error(error);
+        if (title) {
+            core.error(error, { title });
+        }
+        else {
+            core.error(error);
+        }
     }
     else {
         core.info('no error set');
@@ -98,9 +113,9 @@ const fmt = __importStar(__nccwpck_require__(610));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            fmt.formatErrors(core.getInput('error'));
-            fmt.formatWarning(core.getInput('warning'));
-            fmt.formatInfos(core.getInput('info'));
+            fmt.formatErrors(core.getInput('error'), core.getInput('title'));
+            fmt.formatWarning(core.getInput('warning'), core.getInput('title'));
+            fmt.formatInfos(core.getInput('info'), core.getInput('title'));
         }
         catch (error) {
             if (error instanceof Error)

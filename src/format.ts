@@ -1,24 +1,36 @@
 import * as core from '@actions/core'
 
-export function formatInfos(info: string): void {
+export function formatInfos(info: string, title: string): void {
   if (info) {
-    core.notice(info)
+    if (title) {
+      core.notice(info, {title})
+    } else {
+      core.notice(info)
+    }
   } else {
     core.info('no info set')
   }
 }
 
-export function formatWarning(warn: string): void {
+export function formatWarning(warn: string, title: string): void {
   if (warn) {
-    core.warning(warn)
+    if (title) {
+      core.warning(warn, {title})
+    } else {
+      core.warning(warn)
+    }
   } else {
     core.info('no warn set')
   }
 }
 
-export function formatErrors(error: string): void {
+export function formatErrors(error: string, title: string): void {
   if (error) {
-    core.error(error)
+    if (title) {
+      core.error(error, {title})
+    } else {
+      core.error(error)
+    }
   } else {
     core.info('no error set')
   }
