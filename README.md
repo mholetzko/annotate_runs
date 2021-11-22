@@ -24,7 +24,7 @@ This github actions does not have any outputs, it just annotates ( or not :) )
 ## Example usage
 
 ```yml
-uses: mholetzko/annotate_runs@v1
+uses: mholetzko/annotate_runs@v1.0.0
 with:
   info: 'This is an info'
   warning: 'This is a warning'
