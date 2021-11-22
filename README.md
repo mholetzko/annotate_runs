@@ -33,3 +33,15 @@ with:
 
 Doing so, you will get the following output of your run. Keep in mind, that the heading of each annotation is equal to your pipeline step name.
 ![example step output](./assets/action_output.png)
+
+```yml
+uses: mholetzko/annotate_runs@v1.0.0
+with:
+  title: 'Example Annotation Title'
+  info: 'This is an info'
+  warning: 'This is a warning'
+  error: 'This is an error'
+```
+
+If you want you can also add a dedicated title
+![example step output](./assets/action_output_with_title.png)
