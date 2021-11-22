@@ -20,6 +20,6 @@ export function formatErrors(error: string): void {
   if (error) {
     core.error(error)
   } else {
-    core.info('no warn set')
+    core.info('no error set')
   }
 }

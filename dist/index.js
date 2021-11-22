@@ -51,7 +51,7 @@ function formatErrors(error) {
         core.error(error);
     }
     else {
-        core.info('no warn set');
+        core.info('no error set');
     }
 }
 exports.formatErrors = formatErrors;
