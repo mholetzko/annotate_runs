@@ -5,15 +5,12 @@ inputs:
   warning: # change this
     required: false
     description: 'This message - if set - will be printed as warning to the action(s) summary'
-    default: 'Warning from action'
   info: # change this
     required: false
     description: 'This message - if set - will be printed as info to the action(s) summary'
-    default: 'Info from action'
   error: # change this
     required: false
     description: 'This message - if set - will be printed as error to the action(s) summary'
-    default: 'Error from action'
 runs:
   using: 'node12'
   main: 'dist/index.js'
