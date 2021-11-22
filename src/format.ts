@@ -3,7 +3,7 @@ import * as core from '@actions/core'
 export function formatInfos(info: string, title: string): void {
   if (info) {
     if (title) {
-      core.notice(info, {title, file: 'www.google.com'})
+      core.notice(info, {title})
     } else {
       core.notice(info)
     }

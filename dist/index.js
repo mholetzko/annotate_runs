@@ -31,7 +31,7 @@ const core = __importStar(__nccwpck_require__(186));
 function formatInfos(info, title) {
     if (info) {
         if (title) {
-            core.notice(info, { title, file: 'www.google.com' });
+            core.notice(info, { title });
         }
         else {
             core.notice(info);
